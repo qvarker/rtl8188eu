@@ -832,6 +832,7 @@ strip:
 	$(CROSS_COMPILE)strip $(MODULE_NAME).ko --strip-unneeded
 
 install:
+	cp firmware/rtl8188eufw.bin /lib/firmware/rtlwifi
 	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
 	/sbin/depmod -a ${KVER}
 
